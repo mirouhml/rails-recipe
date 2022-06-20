@@ -28,7 +28,7 @@
 
 - Run git clone on this project at the desired directory:
   ```
-  git clone https://github.com/nachosala89/recipe-app-rails.git
+  https://github.com/mirouhml/rails-recipe.git
   ```
 - Go to the cloned directory with `cd recipe-app-rails`.
 - Install dependencies with bundle install.
@@ -62,6 +62,12 @@ rspec spec/
 - GitHub: [Github](https://github.com/Dagic-zewdu)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/dagic-zewdu/)
 - Twitter: [Twitter](https://twitter.com/dagic4)
+
+👤 **Candy Inga Cynthia**
+
+- GitHub: [@cynthiainga](https://github.com/cynthiainga)
+- Twitter: [@CynthiaInga_C](https://twitter.com/CynthiaInga_C)
+- LinkedIn: [Cynthia Inga](https://www.linkedin.com/in/cynthia-inga/)
 
 ## 🤝 Contributing
 
