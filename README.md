@@ -30,7 +30,7 @@
   ```
   https://github.com/mirouhml/rails-recipe.git
   ```
-- Go to the cloned directory with `cd recipe-app-rails`.
+- Go to the cloned directory with `cd rails-recipe`.
 - Install dependencies with bundle install.
 - install RSpec on your system with `gem install rspec`.
 
