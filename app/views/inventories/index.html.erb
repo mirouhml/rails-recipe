@@ -1,0 +1,11 @@
+<section class="inventories">
+  <h1>Inventories</h1>
+  <% @inventories.each do |inventory| %>
+    <div class="inventory-item">
+      <%= link_to inventory.name, inventory %>
+      <% if can? :destroy, inventory %>
+        <%= button_to 'Delete', inventory_path(inventory), method: :delete %>
+      <% end %>
+    </div>
+  <% end %>
+</section>
