@@ -1,0 +1,25 @@
+<section class="inventory-details-section">
+  <h1><%= @inventory.name %></h1>
+  <div class="inventory-add-food">
+    <%= button_to 'Add food', new_food_path, method: :get %>
+  </div>
+  <div class="separator"></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inventory_foods.each do |inventory_details| %>
+        <tr>
+          <td><%= inventory_details.food.name %></td>
+          <td><%= inventory_details.quantity %></td>
+          <td><%= button_to 'Delete', inventory_inventory_food_path(@inventory, inventory_details), method: :delete, class: 'all-posts-link' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
