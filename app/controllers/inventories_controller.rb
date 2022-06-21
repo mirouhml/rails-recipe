@@ -18,7 +18,7 @@ class InventoriesController < ApplicationController
     @inventory = Inventory.new(inventory_params)
     @inventory.user = user
     if @inventory.save
-      flash[:notice] = "Inventory created"
+      flash[:notice] = 'Inventory created'
       redirect_to inventory_path(@inventory)
     else
       render :new
@@ -31,7 +31,7 @@ class InventoriesController < ApplicationController
     inventory = Inventory.find_by(id: params[:id])
     if inventory.present?
       if inventory.destroy
-        flash[:notice] = "Inventory deleted"
+        flash[:notice] = 'Inventory deleted'
       else
         flash[:alert] = 'Inventory was not deleted, please try again later.'
       end
