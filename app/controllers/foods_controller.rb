@@ -18,7 +18,7 @@ class FoodsController < ApplicationController
     @food = current_user.foods.create(food_params)
 
     if @food.save
-      redirect_to user_foods_path
+      redirect_to new_food_path
     else
       render :new
     end
