@@ -1,2 +1,24 @@
-<h1>Foods#index</h1>
-<p>Find me in app/views/foods/index.html.erb</p>
+<section class="foods">
+    <div class="food-add">
+        <%= link_to new_food_path(@user.id) do%>
+            <button class="add-food-btn">Add Food</button>
+        <% end %>
+    </div>
+
+    <table class="table">     
+        <thead class="table-container">
+
+            <th scope="col">Foods</th>
+            <th scope="col">Measurement unit</th>
+            <th scope="col">Unit price</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% @foods.each do |food| %>
+                <%= render 'table_row', food: food %>
+            <% end %>
+        </tbody>
+    </table>
+</section>
