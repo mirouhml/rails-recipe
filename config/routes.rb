@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'food#index'
-  devise_scope :user do
+  root 'foods#index'
+  devise_scope :users do
     get '/user/sign_out' => 'devise/sessions#destroy'
   end
-  resources :food, only: [:index, :new, :create, :destroy]
+  resources :foods
   resources :recipes do
     resources :recipe_foods
   end
