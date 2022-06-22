@@ -13,11 +13,17 @@
       </tr>
     </thead>
     <tbody>
-      <% @inventory_foods.each do |inventory_details| %>
+      <% if !@inventory_foods.empty? %>
+        <% @inventory_foods.each do |inventory_details| %>
+          <tr>
+            <td><%= inventory_details.food.name %></td>
+            <td><%= inventory_details.quantity %></td>
+            <td><%= button_to 'Delete', inventory_inventory_food_path(@inventory, inventory_details), method: :delete, class: 'all-posts-link' %></td>
+          </tr>
+        <% end %>
+      <% else %>
         <tr>
-          <td><%= inventory_details.food.name %></td>
-          <td><%= inventory_details.quantity %></td>
-          <td><%= button_to 'Delete', inventory_inventory_food_path(@inventory, inventory_details), method: :delete, class: 'all-posts-link' %></td>
+          <td colspan="3">No items yet.</td>
         </tr>
       <% end %>
     </tbody>
