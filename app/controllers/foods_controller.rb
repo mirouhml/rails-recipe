@@ -1,9 +1,7 @@
 class FoodsController < ApplicationController
-  before_action :authenticate_user!
-
+  load_and_authorize_resource
   def index
-    @user = current_user
-    @foods = Food.all
+    @food = Food.all
   end
 
   def show
@@ -15,11 +13,13 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = current_user.foods.create(food_params)
+    user = current_user
+    @food = Food.new(food_params)
+    @food.user = user
 
     if @food.save
       flash[:notice] = 'Food was successfully created'
-      redirect_to foods_path
+      redirect_to foods_path(user)
     else
       render :new
       flash[:alert] = 'Food wasn\'t created, please try again later.'

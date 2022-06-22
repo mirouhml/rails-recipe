@@ -1,124 +1,43 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Libre+Baskerville&family=Poppins:wght@200;300;400;500&family=Ubuntu+Mono:ital@1&display=swap');
 
-.inventories {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 20px;
+* {
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
-.inventory-item {
-  border: 1px solid black;
-  padding: 1rem;
-  margin: 1rem;
-  width: 80%;
+.bg-color {
+  background-color: #effcddd2;
 }
 
-.devise-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
+.navbar {
+  background-color: #ddc8c4 !important;
 }
 
-.input {
-  padding: 0.5rem;
-  width: 100%;
-  border: 1px solid black;
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  color: #190e4f !important;
 }
 
-.field {
-  margin: 1rem;
+#username-navbar {
+  color: #dc3544;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.devise-check {
-  width: fit-content;
+h1 {
+  font-family: 'Bree Serif', serif !important;
+  color: #190e4f !important;
+  font-size: 60px !important;
 }
 
-.devise-form > form {
-  width: 100%;
-  max-width: 590px;
+h2 {
+  font-family: 'Bree Serif', serif !important;
+  font-size: 40px !important;
 }
 
-.actions {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+a {
+  text-decoration: none !important;
 }
 
-.devise-button {
-  width: fit-content;
-  align-self: center;
-  padding: 0.5rem 1rem;
-}
-
-.inventory-details-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.inventory-details-section > table {
-  width: 70%;
-  border-collapse: collapse;
-  text-align: center;
-  border: 1px solid black;
-  table-layout: fixed;
-}
-
-td,
-th {
-  border: 1px solid black;
-}
-
-.separator {
-  width: 60%;
-  height: 2px;
-  background-color: black;
-  margin: 1rem 0;
-}
-
-.inventory-add-food {
-  display: flex;
-  justify-content: flex-end;
-  width: 70%;
-}
-
-.add-inventory-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.inventory-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  margin-top: 20px;
+.navbar-nav {
+  margin-left: auto;
 }
