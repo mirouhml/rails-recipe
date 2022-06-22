@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   devise_scope :users do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    get '/user/sign_out' => 'devise/sessions#destroy'
   end
 
 
