@@ -17,19 +17,11 @@
         <li class="nav-item">
           <%= link_to "All Recipes", public_recipes_path ,class:"nav-link fs-5" %>
         </li>
-        <% unless current_user.nil? %>
-          <li class="nav-item">
-            <%= link_to "Shopping List", shopping_index_path ,class:"nav-link fs-5" %>
-          </li>
-        <% end %>
         <% if current_user.nil? %>
           <li class="nav-item">
             <%= link_to "Log in", new_user_session_path ,class:"nav-link fs-5" %>
           </li>
-        <% else %> 
-          <li class="nav-item">
-            <%= link_to 'Logout', user_sign_out_path ,class:"nav-link fs-5" %>
-          </li>
+        <% else %>
         <% end %>
       </ul>
     </div>
