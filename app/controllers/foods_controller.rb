@@ -18,16 +18,27 @@ class FoodsController < ApplicationController
     @food = current_user.foods.create(food_params)
 
     if @food.save
-      redirect_to new_food_path
+      flash[:notice] = 'Food was successfully created'
+      redirect_to foods_path
     else
       render :new
+      flash[:alert] = 'Food wasn\'t created, please try again later.'
     end
   end
 
   def destroy
-    @food = current_user.foods.find(params[:id])
-    @food.destroy
-    redirect_to new_food_path
+    user = current_user
+    food = Food.find_by(id: params[:id])
+    if food.present?
+      if food.destroy
+        flash[:notice] = 'Food was successfully deleted'
+      else
+        flash[:alert] = 'Food was not deleted, please try again later.'
+      end
+    else
+      flash[:alert] = 'Food was not found, please try again later.'
+    end
+    redirect_to foods_path(user)
   end
 
   private
