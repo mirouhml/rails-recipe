@@ -41,3 +41,8 @@ a {
 .navbar-nav {
   margin-left: auto;
 }
+
+.logout {
+  border: none;
+  background: none;
+}

@@ -23,7 +23,7 @@
           </li>
         <% else %>
          <li class="nav-item">
-            <%= link_to 'Logout', user_sign_out_path ,class:"nav-link fs-5" %>
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete ,class:"nav-link fs-5 logout" %>
           </li>
         <% end %>
       </ul>
