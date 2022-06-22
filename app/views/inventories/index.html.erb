@@ -1,0 +1,18 @@
+<section class="inventories">
+  <h1>Inventories</h1>
+  <% if !@inventories.empty? %>
+    <% @inventories.each do |inventory| %>
+      <div class="inventory-item">
+        <%= link_to inventory.name, inventory %>
+        <% if can? :destroy, inventory %>
+          <%= button_to 'Delete', inventory_path(inventory), method: :delete %>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No inventories yet.</p>
+  <% end %>
+  <% if can? :create, Inventory %>
+    <%= button_to 'New Inventory', new_inventory_path, method: :get %>
+  <% end %>
+</section>
