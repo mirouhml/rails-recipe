@@ -12,4 +12,7 @@
   <% else %>
     <p>No inventories yet.</p>
   <% end %>
+  <% if can? :create, Inventory %>
+    <%= button_to 'New Inventory', new_inventory_path, method: :get %>
+  <% end %>
 </section>
