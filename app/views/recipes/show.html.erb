@@ -4,18 +4,18 @@
     <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
     <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
     <p><%= @recipe.description %></p>
-    <button type="button" onclick="document.getElementById('exampleModal').className='visible modal'">Generate Shopping List</button>
+    <button type="button" onclick="document.getElementById('exampleModal').className='visible modal'" class='btn btn-primary my-3'>Generate Shopping List</button>
   </div>
   <div class="col d-flex flex-column justify-content-between align-items-end">
-    <div>
-      <label class="form-check-label" for="publicCheckbox">Public</label>
+    <div class="d-flex flex-row align-items-center gap-2">
+      <label class="form-check-label" for="publicCheckbox">Set recipe to: </label>
       <% if @recipe.public %>
-        <%= button_to 'Private', recipe_set_public_path(@recipe.id), method: :post %>
+        <%= button_to 'Private', recipe_set_public_path(@recipe.id), method: :post, class:'btn btn-primary my-3' %>
       <% else %>
-        <%= button_to 'Public', recipe_set_public_path(@recipe.id), method: :post %>
+        <%= button_to 'Public', recipe_set_public_path(@recipe.id), method: :post, class:'btn btn-primary my-3' %>
       <% end %>
     </div>
-    <%= button_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), method: :get %>
+    <%= button_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), method: :get, class:'btn btn-primary my-3' %>
   </div>
 </section>
 <hr>
@@ -38,8 +38,8 @@
             <td scope="row" class="col-5"><%= recipe_food.food.name %></td>
             <td class="col-2"><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
             <td class="col-2">$ <%= recipe_food.food.price * recipe_food.quantity %></td>
-            <td class="col d-flex">
-              <button class="btn btn-primary my-3">Modify</button>
+            <td class="col d-flex justify-content-center">
+              <button class="btn btn-primary m-3 ">Modify</button>
               <% if can? :destroy, @recipe %>
                 <%= button_to 'Remove', delete_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class:'btn btn-danger my-3' %>
               <% end %>
@@ -64,7 +64,7 @@
             <p>-- Select inventory --</p>
             <%= select_tag "inventory_id", options_from_collection_for_select(@inventories, 'id', 'name') %>
           </div>
-          <%= submit_tag 'Generate' %>
+          <%= submit_tag 'Generate', class:'btn btn-primary my-3' %>
         </div>
       <% end %>
 
