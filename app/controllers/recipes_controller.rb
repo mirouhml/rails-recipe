@@ -27,6 +27,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @inventories = current_user.inventories
     @recipe = Recipe.find(params[:id])
   end
 
