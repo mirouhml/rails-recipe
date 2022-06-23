@@ -6,10 +6,12 @@
     <h2>You don't have any existing recipe of your own!<h2>
   <% else %>
     <% @recipes.each do |recipe| %>
-      <article class="row d-flex border p-3 mb-5">
+      <article class="row d-flex border p-3 mb-5 bg-white">
         <div class="col-md-4">
           <h2><%= link_to recipe.name, recipe_path(recipe.id), method: :get %></h2>
-          <%= link_to 'Remove', recipe_path(recipe.id), data: { "turbo-method": :delete }, class:'btn btn-danger my-3' %>
+          <% if can? :destroy, recipe %>
+            <%= button_to 'Remove', recipe_path(recipe.id), method: :delete, class:'btn btn-danger my-3' %>
+          <% end %>
         </div>
         <div class="col-md-8">
           <p><%= recipe.description %></p>

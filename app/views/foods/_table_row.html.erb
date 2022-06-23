@@ -3,8 +3,10 @@
   <td><%= food.measurement_unit %></td>
   <td><%= food.price %></td>
   <td class="del_btn">
-    <%= button_to food_path(food), method: :delete, class: "del_btn" do %>
-      <span>Delete</span>
+    <% if can? :destroy, food %>
+      <%= button_to food_path(food), method: :delete, class:'btn btn-danger my-1' do %>
+        <span>Delete</span>
+      <% end %>
     <% end %>
   </td>
 </tr>

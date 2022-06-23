@@ -1,7 +1,7 @@
 <section class="inventory-details-section">
   <h1><%= @inventory.name %></h1>
   <div class="inventory-add-food">
-    <%= button_to 'Add food', new_food_path, method: :get %>
+    <%= button_to 'Add food', new_inventory_inventory_food_path(@inventory), method: :get, class:'btn btn-primary my-3' %>
   </div>
   <div class="separator"></div>
   <table>
@@ -18,7 +18,7 @@
           <tr>
             <td><%= inventory_details.food.name %></td>
             <td><%= inventory_details.quantity %></td>
-            <td><%= button_to 'Delete', inventory_inventory_food_path(@inventory, inventory_details), method: :delete, class: 'all-posts-link' %></td>
+            <td><%= button_to 'Delete', inventory_inventory_food_path(@inventory, inventory_details), method: :delete, class:'btn btn-danger my-3' %></td>
           </tr>
         <% end %>
       <% else %>

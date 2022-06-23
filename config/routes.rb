@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-
-  resources :foods, only: [:index, :new, :show, :create, :destroy]
+  resources :foods, only: [:index, :new, :create, :destroy]
   resources :recipes do
     post 'set_public', to: 'recipes#set_public'
     resources :recipe_foods
@@ -14,8 +8,8 @@ Rails.application.routes.draw do
   resources :public_recipes, only: [:index]
   delete '/recipes/:recipe_id/recipe_foods/:id', to: 'recipe_foods#destroy', as: "delete_recipe_food"
   resources :inventories, only: [:index, :show, :new, :create, :destroy] do
-    resources :inventory_foods, only: [:create, :destroy]
+    resources :inventory_foods, only: [:new, :create, :destroy]
   end
-
-  root 'foods#index'
+  resources :shopping_list, only: [:index]
+  root to: 'foods#index'
 end
