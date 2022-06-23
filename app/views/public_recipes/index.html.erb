@@ -1,7 +1,11 @@
 <section class="public_recipe_container">
   <div class="row">
-    <% @recipes.each do |recipe| %>
-      <%= render partial: "recipe", locals: { recipe: } %>
+    <% if @recipes.empty? %>
+      <h2>You don't have any existing recipe of your own!</h2>
+    <% else %>
+      <% @recipes.each do |recipe| %>
+        <%= render partial: "recipe", locals: { recipe: } %>
+      <% end %>
     <% end %>
   </div>
 </section>
