@@ -46,3 +46,56 @@ a {
   border: none;
   background: none;
 }
+
+.inventory-details-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.inventory-details-section > table {
+  width: 70%;
+  border-collapse: collapse;
+  text-align: center;
+  border: 1px solid black;
+  table-layout: fixed;
+}
+
+td,
+th {
+  border: 1px solid black;
+}
+
+.separator {
+  width: 60%;
+  height: 2px;
+  background-color: black;
+  margin: 1rem 0;
+}
+
+.inventory-add-food {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+}
+
+.add-inventory-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.inventory-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 20px;
+}

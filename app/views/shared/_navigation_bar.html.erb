@@ -14,8 +14,13 @@
             <%= link_to "My Recipes", recipes_path ,class:"nav-link fs-5" %>
           </li>
         <% end %>
+        <% unless current_user.nil? %>
+          <li class="nav-item">
+            <%= link_to "My Inventories", inventories_path ,class:"nav-link fs-5" %>
+          </li>
+        <% end %>
         <li class="nav-item">
-          <%= link_to "All Recipes", public_recipes_path ,class:"nav-link fs-5" %>
+          <%= link_to "Public Recipes", public_recipes_path ,class:"nav-link fs-5" %>
         </li>
         <% if current_user.nil? %>
           <li class="nav-item">
