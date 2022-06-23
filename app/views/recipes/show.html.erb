@@ -4,9 +4,9 @@
     <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
     <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
     <p><%= @recipe.description %></p>
-
+    <button type="button" onclick="document.getElementById('exampleModal').className='visible modal'">Generate Shopping List</button>
   </div>
-  <div class="col-md-4 d-flex flex-column justify-content-between align-items-end">
+  <div class="col d-flex flex-column justify-content-between align-items-end">
     <div>
       <label class="form-check-label" for="publicCheckbox">Public</label>
       <% if @recipe.public %>
@@ -49,4 +49,25 @@
       </tbody>
     </table>
   <% end %>
+  <div id="exampleModal" class="hidden modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="exampleModalLabel">Generate Shopping List</h5>
+        <button type="button" onclick="document.getElementById('exampleModal').className='hidden'" class="close-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+        </button>
+      </div>
+      <%= form_tag shopping_list_index_path, method: :get do -%>
+        <div class="modal-body">
+          <div>
+            <%= hidden_field_tag "recipe_id", @recipe.id %>
+            <p>-- Select inventory --</p>
+            <%= select_tag "inventory_id", options_from_collection_for_select(@inventories, 'id', 'name') %>
+          </div>
+          <%= submit_tag 'Generate' %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
 </section>
