@@ -9,6 +9,23 @@ class RecipesController < ApplicationController
     @recipes = Recipe.where(public: true)
   end
 
+  def set_public
+    @recipe = Recipe.find_by(id: params[:recipe_id])
+    if @recipe.present?
+      @recipe.public = if @recipe.public
+                         false
+                       else
+                         true
+                       end
+      if @recipe.save
+        flash[:notice] = "Recipe is now #{@recipe.public ? 'public' : 'private'}"
+      else
+        flash[:alert] = 'Recipe wasn\'t updated, please try again later.'
+      end
+    end
+    redirect_back(fallback_location: '/')
+  end
+
   def show
     @recipe = Recipe.find(params[:id])
   end
