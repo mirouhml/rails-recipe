@@ -4,7 +4,7 @@
   <td><%= food.price %></td>
   <td class="del_btn">
     <% if can? :destroy, food %>
-      <%= button_to food_path(food), method: :delete, class: "del_btn" do %>
+      <%= button_to food_path(food), method: :delete, class:'btn btn-danger my-3' do %>
         <span>Delete</span>
       <% end %>
     <% end %>
