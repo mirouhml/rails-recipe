@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :foods, only: [:index, :new, :show, :create, :destroy]
   resources :recipes do
+    post 'set_public', to: 'recipes#set_public'
     resources :recipe_foods
   end
   resources :public_recipes, only: [:index]
