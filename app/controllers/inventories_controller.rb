@@ -6,7 +6,7 @@ class InventoriesController < ApplicationController
 
   def show
     @inventory = Inventory.find_by(id: params[:id])
-    @inventory_foods = @inventory.inventory_foods
+    @inventory_foods = InventoryFood.includes(:food).where(inventory_id: @inventory.id)
   end
 
   def new
@@ -38,7 +38,7 @@ class InventoriesController < ApplicationController
     else
       flash[:alert] = 'Inventory was not found, please try again later.'
     end
-    redirect_to inventory_path(user)
+    redirect_to inventories_path(user)
   end
 
   private

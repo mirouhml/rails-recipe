@@ -5,7 +5,7 @@
       <span class="recipe-author">By: <strong><%= recipe.user.name %></strong></span>
     </div>
     <div class="right_block">
-      <span class="number-food">Total food items: <strong><%= recipe.recipe_foods.length %></span></strong>
+      <span class="number-food">Total food items: <strong><%= recipe_foods.length %></span></strong>
       <span class="total-price">Total price: <strong>$<%= recipe.total_price %>.00</strong></span>
     </div>
     <%= link_to 'About Recipe', recipe_path(recipe), class: "line_btn decoration_none align-self-center fs-5 fw-bold" %>
