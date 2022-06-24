@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   before(:each) do
-    @user = User.new(name: 'Test User', email: 'exemple@gmail.com', password: 'password')
+    @user = User.new(name: 'Test User', email: 'example@gmail.com', password: 'password')
     @food = Food.new(name: 'Test Food', measurement_unit: 'kilo', price: 10, user: @user)
   end
   it 'is valid with a name' do
