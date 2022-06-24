@@ -37,7 +37,7 @@
 ### Run the program
 
 - Follow the setup instructions.
-- Make sure you're inside the correct directory `recipe-app-rails`.
+- Make sure you're inside the correct directory `rails-recipe`.
 - Run `bin/rails server` on the terminal to start Puma server.
 - In your browser, go to `http://127.0.0.1:3000` to interact with the site.
 
