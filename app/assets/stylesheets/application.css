@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Libre+Baskerville&family=Poppins:wght@200;300;400;500&family=Ubuntu+Mono:ital@1&display=swap');
+
+* {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.bg-color {
+  background-color: #effcddd2;
+}
+
+.navbar {
+  background-color: #ddc8c4 !important;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  color: #190e4f !important;
+}
+
+#username-navbar {
+  color: #dc3544;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h1 {
+  font-family: 'Bree Serif', serif !important;
+  color: #190e4f !important;
+  font-size: 60px !important;
+}
+
+h2 {
+  font-family: 'Bree Serif', serif !important;
+  font-size: 40px !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.logout {
+  border: none;
+  background: none;
+}
+
+.inventories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.inventory-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  height: 10rem;
+  background: white;
+  width: 80%;
+  font-size: 2.5rem;
+}
+
+.row {
+  width: 100%;
+}
+
+.inventory-details-section,
+.shopping-list-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.shopping-list-section > div {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.inventory-details-section > table,
+.shopping-list-section > table {
+  width: 70%;
+  border-collapse: collapse;
+  text-align: center;
+  border: 1px solid black;
+  table-layout: fixed;
+}
+
+td,
+th {
+  border: 1px solid black;
+}
+
+.separator {
+  width: 60%;
+  height: 2px;
+  background-color: black;
+  margin: 1rem 0;
+}
+
+.inventory-add-food {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+}
+
+.add-inventory-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.inventory-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.close-button {
+  border: none;
+  background: none;
+}
+
+.add-food-btn {
+  float: right;
+  margin: 1rem;
+  padding: 0 1rem;
+}
+
+td.del_btn {
+  display: flex;
+  justify-content: center;
+}
+
+.public_recipe_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}

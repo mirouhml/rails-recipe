@@ -1,0 +1,73 @@
+<h1 class="my-5 text-center"><%= @recipe.name %></h1>
+<section class="row">
+  <div class="col-md-6">
+    <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
+    <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
+    <p><%= @recipe.description %></p>
+    <button type="button" onclick="document.getElementById('exampleModal').className='visible modal'" class='btn btn-primary my-3'>Generate Shopping List</button>
+  </div>
+  <div class="col d-flex flex-column justify-content-between align-items-end">
+    <div class="d-flex flex-row align-items-center gap-2">
+      <label class="form-check-label" for="publicCheckbox">Set recipe to: </label>
+      <% if @recipe.public %>
+        <%= button_to 'Private', recipe_set_public_path(@recipe.id), method: :post, class:'btn btn-primary my-3' %>
+      <% else %>
+        <%= button_to 'Public', recipe_set_public_path(@recipe.id), method: :post, class:'btn btn-primary my-3' %>
+      <% end %>
+    </div>
+    <%= button_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), method: :get, class:'btn btn-primary my-3' %>
+  </div>
+</section>
+<hr>
+<section>
+  <% if @recipe.recipe_foods.blank? %>
+    <h3>This recipe has no ingredients yet.<h3>
+  <% else %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Food</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Value</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe_foods.each do |recipe_food| %>  
+          <tr>
+            <td scope="row" class="col-5"><%= recipe_food.food.name %></td>
+            <td class="col-2"><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+            <td class="col-2">$ <%= recipe_food.food.price * recipe_food.quantity %></td>
+            <td class="col d-flex justify-content-center">
+              <button class="btn btn-primary m-3 ">Modify</button>
+              <% if can? :destroy, @recipe %>
+                <%= button_to 'Remove', delete_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class:'btn btn-danger my-3' %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  <div id="exampleModal" class="hidden modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="exampleModalLabel">Generate Shopping List</h5>
+        <button type="button" onclick="document.getElementById('exampleModal').className='hidden'" class="close-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+        </button>
+      </div>
+      <%= form_tag shopping_list_index_path, method: :get do -%>
+        <div class="modal-body">
+          <div>
+            <%= hidden_field_tag "recipe_id", @recipe.id %>
+            <p>-- Select inventory --</p>
+            <%= select_tag "inventory_id", options_from_collection_for_select(@inventories, 'id', 'name') %>
+          </div>
+          <%= submit_tag 'Generate', class:'btn btn-primary my-3' %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</section>

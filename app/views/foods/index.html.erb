@@ -1,0 +1,28 @@
+<section class="foods">
+  <div class="food-add">
+    <%= link_to new_food_path do%>
+      <button class="add-food-btn btn btn-primary my-3 py-2">Add Food</button>
+    <% end %>
+  </div>
+
+  <table class="table">     
+    <thead class="table-container">
+      <th scope="col">Foods</th>
+      <th scope="col">Measurement unit</th>
+      <th scope="col">Unit price</th>
+      <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if !@foods.empty? %>
+        <% @foods.each do |food| %>
+            <%= render 'table_row', food: food %>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="4">No items yet.</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
