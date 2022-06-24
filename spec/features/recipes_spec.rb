@@ -14,4 +14,7 @@ RSpec.describe Food, type: :model do
   it 'reciped food has the correct recipe' do
     expect(@recipe_food.recipe).to eq(@recipe)
   end
+  it "should have recipe name " do
+    expect(@recipe.name).to eq(@recipe.name)  
+  end
 end
