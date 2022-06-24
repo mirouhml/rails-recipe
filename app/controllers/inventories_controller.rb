@@ -38,7 +38,7 @@ class InventoriesController < ApplicationController
     else
       flash[:alert] = 'Inventory was not found, please try again later.'
     end
-    redirect_to inventory_path(user)
+    redirect_to inventories_path(user)
   end
 
   private
