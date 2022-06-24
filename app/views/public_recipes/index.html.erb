@@ -3,11 +3,11 @@
     <% if @recipes.empty? %>
       <h2>You don't have any existing recipe of your own!</h2>
     <% else %>
-      <article class="row d-flex border p-3 mb-5 bg-white">
-        <% @recipes.each do |recipe| %>
+      <% @recipes.each do |recipe| %>
+        <article class="row d-flex border p-3 mb-5 bg-white">
           <%= render partial: "recipe", locals: { recipe:, recipe_foods: @recipe_foods } %>
-        <% end %>
-      </article>
+        </article>
+      <% end %>
     <% end %>
   </div>
 </section>
