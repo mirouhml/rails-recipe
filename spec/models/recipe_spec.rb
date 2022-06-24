@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-  subject { 
+  subject do
     user = User.create(name: 'John', email: 'john@example.com', password: 'password', confirmed_at: Time.now)
-    Recipe.new(name: "Recipe 1", preparation_time: 1, cooking_time: 1, description: "Recipe 1", public: true, user: user)
-  }
+    Recipe.new(name: 'Recipe 1', preparation_time: 1, cooking_time: 1, description: 'Recipe 1', public: true,
+               user:)
+  end
 
   before { subject.save }
 
@@ -39,7 +40,7 @@ RSpec.describe Recipe, type: :model do
   end
 
   it 'public should be true or false' do
-    subject.public = "something"
+    subject.public = 'something'
     expect(subject).to_not be_valid
   end
 

@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe InventoryFood, type: :model do
-  subject { 
+  subject do
     user = User.create(name: 'John', email: 'john@example.com', password: 'password', confirmed_at: Time.now)
-    ivnentory = Inventory.create(name: "Inventory 1", user: user)
-    food = Food.create(name: "Food 1", measurement_unit: "KG", price: 20, user: user)
-    InventoryFood.new(inventory: ivnentory, food: food, quantity: 1)
-  }
+    ivnentory = Inventory.create(name: 'Inventory 1', user:)
+    food = Food.create(name: 'Food 1', measurement_unit: 'KG', price: 20, user:)
+    InventoryFood.new(inventory: ivnentory, food:, quantity: 1)
+  end
 
   before { subject.save }
 

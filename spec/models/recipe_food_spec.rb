@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe RecipeFood, type: :model do
-  subject { 
+  subject do
     user = User.create(name: 'John', email: 'john@example.com', password: 'password', confirmed_at: Time.now)
-    recipe = Recipe.create(name: "Recipe 1", preparation_time: 1, cooking_time: 1, description: "Recipe 1", public: true, user: user)
-    food = Food.create(name: "Food 1", measurement_unit: "KG", price: 20, user: user)
-    RecipeFood.new(recipe: recipe, food: food, quantity: 5)
-  }
+    recipe = Recipe.create(name: 'Recipe 1', preparation_time: 1, cooking_time: 1, description: 'Recipe 1',
+                           public: true, user:)
+    food = Food.create(name: 'Food 1', measurement_unit: 'KG', price: 20, user:)
+    RecipeFood.new(recipe:, food:, quantity: 5)
+  end
 
   before { subject.save }
 

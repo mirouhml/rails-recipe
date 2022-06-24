@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Inventory, type: :model do
-  subject { 
+  subject do
     user = User.create(name: 'John', email: 'john@example.com', password: 'password', confirmed_at: Time.now)
-    Inventory.new(name: "Inventory 1", user: user)
-  }
+    Inventory.new(name: 'Inventory 1', user:)
+  end
 
   before { subject.save }
 
