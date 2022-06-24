@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RecipeFood, type: :model do
   before(:each) do
-    @user = User.new(name: 'Test User', email: 'exemple@gmail.com', password: 'password')
+    @user = User.new(name: 'Test User', email: 'example@gmail.com', password: 'password')
     @recipe = Recipe.new(name: 'Test Recipe', user: @user)
     @recipe_food = RecipeFood.new(recipe: @recipe, food: Food.new(name: 'Test Food', user: @user), quantity: 10)
   end
