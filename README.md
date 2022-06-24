@@ -4,7 +4,7 @@
 
 > In this project we have build a Recipe App usign Ruby on Rails.
 
-![screenshot]()
+![screenshot](https://user-images.githubusercontent.com/20567503/175523839-6cb43e00-bf19-4866-86a4-350fbbd06742.png)
 
 # ERD
 
