@@ -5,7 +5,7 @@
     <% else %>
       <article class="row d-flex border p-3 mb-5 bg-white">
         <% @recipes.each do |recipe| %>
-          <%= render partial: "recipe", locals: { recipe: } %>
+          <%= render partial: "recipe", locals: { recipe:, recipe_foods: @recipe_foods } %>
         <% end %>
       </article>
     <% end %>
